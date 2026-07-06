@@ -1,0 +1,21 @@
+hunt_name: Runner memory scraping via Python
+question_answered: Did the malicious action read GitHub Actions runner memory to extract secrets?
+telemetry_source: self-hosted runner EDR process events or auditd logs
+required_access:
+  - EDR query access for runner fleet
+query_language: kql
+query_or_command: |
+  DeviceProcessEvents
+  | where FileName =~ "python3"
+  | where ProcessCommandLine has "/proc/" and ProcessCommandLine has "/mem"
+  | where ProcessCommandLine has_any ("Runner.Worker", "isSecret", "gh auth token")
+output_fields:
+  - Timestamp
+  - DeviceName
+  - FileName
+  - ProcessCommandLine
+  - InitiatingProcessCommandLine
+positive_signal: python3 process attempts to read /proc/<Runner.Worker PID>/mem during affected workflow run window.
+false_positive_notes: Rare on CI runners. Memory forensics or debugging tools may read /proc memory in controlled environments.
+escalation: Classify matching workflow run as confirmed compromise and rotate all secrets reachable by that job.
+closure_condition: No matching process telemetry exists for affected self-hosted runner runs, or runs used GitHub-hosted runners without available endpoint telemetry and are classified based on workflow exposure.

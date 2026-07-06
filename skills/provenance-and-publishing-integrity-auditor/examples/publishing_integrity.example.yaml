@@ -1,0 +1,21 @@
+publishing_integrity:
+  artifact:
+    ecosystem: GitHub Actions
+    name: owner/action
+    version_or_ref: v1.2.3
+  source_repository: https://github.com/owner/action
+  tag:
+    expected: v1.2.3
+    current_sha: unknown
+    known_good_sha: unknown
+    moved: null
+    reachable_from_default_branch: null
+    signed: null
+  provenance:
+    present: null
+    verified: null
+    type: unknown
+  suspicious_reasons:
+    - mutable tag used in CI/CD workflow
+  verification_commands:
+    - REPO=owner/action REF=v1.2.3 ./scripts/github_action_ref_audit.sh

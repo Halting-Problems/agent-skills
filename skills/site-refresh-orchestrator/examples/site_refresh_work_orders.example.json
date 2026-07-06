@@ -1,0 +1,47 @@
+{
+  "site_refresh_result": {
+    "total_candidates": 2,
+    "already_reported": [
+      {
+        "candidate_id": "known-package-incident",
+        "title": "Known package incident",
+        "reasons": [
+          "known dedupe_keys: pkg:npm:known-package"
+        ]
+      }
+    ],
+    "rejected_candidates": [],
+    "new_unreported_candidates": [
+      {
+        "candidate_id": "new-package-incident",
+        "title": "New package incident",
+        "source_urls": [
+          "https://example.com/research/new-package-incident"
+        ],
+        "dedupe_keys": [
+          "pkg:npm:new-package"
+        ]
+      }
+    ],
+    "spawned_site_workers": [
+      {
+        "task_id": "site-worker-new-package-incident",
+        "candidate_id": "new-package-incident",
+        "title": "New package incident",
+        "source_urls": [
+          "https://example.com/research/new-package-incident"
+        ],
+        "dedupe_keys": [
+          "pkg:npm:new-package"
+        ],
+        "status": "queued",
+        "specialist": "site-worker",
+        "prompt": "Use the Halting Problems site-worker skill for one candidate source only..."
+      }
+    ],
+    "completed_artifacts": [],
+    "validation_results": [],
+    "blocking_gaps": [],
+    "recommended_next_action": "Spawn all queued site-worker tasks independently; run concurrently if supported."
+  }
+}

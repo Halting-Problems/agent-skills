@@ -1,0 +1,19 @@
+site_worker_result:
+  mode: new_incident_post
+  decision: needs_review
+  event_id: actions-cool-github-actions-tag-hijack-2026-05-18
+  slug: actions-cool-github-actions-tag-hijack.md
+  parent_campaign_id: none
+  spawned_tasks:
+    - specialist: site-feed-curator-and-dedupe-skill
+      status: complete
+    - specialist: supply-chain-compromise-researcher
+      status: pending
+    - specialist: cloud-oidc-and-ci-cd-abuse-hunter
+      status: pending
+  completed_artifacts: []
+  validation_results: []
+  blocking_gaps:
+    - cleanup status is unknown
+    - direct affected-project source is missing
+  recommended_next_action: collect direct source or mark confidence accordingly

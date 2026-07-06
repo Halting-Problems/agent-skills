@@ -1,0 +1,14 @@
+browser_exposure:
+  affected_package: art-template
+  affected_versions:
+    - unknown
+  exposure_classification: built_but_not_served
+  evidence:
+    lockfile_hit: true
+    built_asset_hit: true
+    cdn_logs_hit: false
+  required_actions:
+    - rebuild frontend from safe dependency graph
+    - invalidate CDN caches
+    - confirm clean asset hashes are served
+  closure_condition: CDN and origin no longer serve hashes associated with the poisoned build.

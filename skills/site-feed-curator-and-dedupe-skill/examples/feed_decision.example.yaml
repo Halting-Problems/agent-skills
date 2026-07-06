@@ -1,0 +1,16 @@
+feed_decision:
+  action: update_existing
+  matched_existing_posts:
+    - event_id: actions-cool-github-actions-tag-hijack-2026-05-18
+      overlap:
+        - repo:actions-cool/issues-helper
+        - domain:t.m-kosche.com
+  dedupe_keys:
+    - repo:actions-cool/issues-helper
+    - domain:t.m-kosche.com
+  parent_campaign_id: none
+  reason: Candidate overlaps existing post on repository and C2 domain.
+  required_updates:
+    - add cleanup time
+    - add new registry tag restoration evidence
+  canonical_slug: actions-cool-github-actions-tag-hijack.md

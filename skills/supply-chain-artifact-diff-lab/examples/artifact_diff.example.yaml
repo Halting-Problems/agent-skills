@@ -1,0 +1,19 @@
+artifact_diff:
+  artifact_identity:
+    ecosystem: npm
+    registry: npmjs
+    name: example-package
+    suspicious_version_or_ref: 1.2.4
+    known_good_version_or_ref: 1.2.3
+  collection_commands:
+    - python scripts/npm_artifact_diff.py example-package 1.2.3 1.2.4
+  hashes:
+    - algorithm: sha256
+      value: unknown
+  size_delta: "suspicious artifact 230 KB larger than known-good"
+  changed_manifest_fields:
+    - package.json scripts.preinstall added
+  new_files:
+    - package/setup.mjs
+  execution_trigger: npm preinstall
+  confidence: medium

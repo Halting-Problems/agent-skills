@@ -1,0 +1,25 @@
+{
+  "event_id": "example-supply-chain-event",
+  "detections": [
+    {
+      "name": "Package manager spawns Bun during install",
+      "type": "sigma",
+      "telemetry": "process_creation",
+      "query": "ParentImage contains npm or pnpm or yarn and Image endswith bun",
+      "output_fields": [
+        "timestamp",
+        "host",
+        "parent_image",
+        "image",
+        "command_line"
+      ],
+      "positive_signal": "Package manager lifecycle script launched Bun.",
+      "false_positives": "Projects that intentionally bootstrap Bun during install.",
+      "severity": "medium",
+      "maps_to_iocs": [],
+      "maps_to_behaviors": [
+        "npm_lifecycle_execution"
+      ]
+    }
+  ]
+}

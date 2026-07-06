@@ -1,0 +1,15 @@
+campaign_graph:
+  parent_campaign_id: mini-shai-hulud
+  child_events:
+    - intercom-client-npm-shai-hulud
+    - lightning-pypi-bun-stealer
+  shared_indicators:
+    - shared payload family according to source
+  evidence_for_linking:
+    - direct source groups both under same campaign
+  evidence_against_linking:
+    - package-specific initial access differs
+  alternative_hypotheses:
+    - copycat reused public payload
+  confidence: medium
+  decision: campaign

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Halting Problems Site Worker Run Ledger",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "event_id",
+    "canonical_publication_target",
+    "task_results",
+    "publish_decision"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_publication_target": {
+      "const": "nextjs-postgres"
+    },
+    "task_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "status",
+          "artifact_path",
+          "confidence",
+          "evidence_references"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "pass_with_warnings",
+              "block",
+              "not_applicable"
+            ]
+          },
+          "artifact_path": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "blocking_gaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "publish_decision": {
+      "enum": [
+        "publish_ready",
+        "needs_review",
+        "reject",
+        "update_existing",
+        "attach_to_campaign",
+        "duplicate"
+      ]
+    }
+  }
+}

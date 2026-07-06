@@ -1,0 +1,11 @@
+{
+  "event_id": "example-npm-token-theft",
+  "event_name": "Example npm Token Theft",
+  "attack_types": ["npm package compromise", "credential theft", "github actions"],
+  "affected_assets": {
+    "ecosystems": ["npm"],
+    "credentials_at_risk": ["npm token", "GitHub Actions OIDC"],
+    "developer_tools": []
+  },
+  "source_urls": ["https://research.example/report"]
+}

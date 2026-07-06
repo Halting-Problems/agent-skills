@@ -1,0 +1,114 @@
+{
+  "schema_version": "3.0",
+  "event_id": "actions-cool-github-actions-tag-hijack-2026-05-18",
+  "event_name": "actions-cool GitHub Actions Tag Hijack Credential Theft",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "attack_types": [
+    "GitHub Action tag hijack",
+    "CI/CD credential theft",
+    "runner memory scraping"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "GitHub Actions"
+    ],
+    "registries": [],
+    "packages": [
+      "actions-cool/issues-helper",
+      "actions-cool/maintain-one-comment"
+    ],
+    "versions": [
+      "mutable tags"
+    ],
+    "repositories": [
+      "actions-cool/issues-helper",
+      "actions-cool/maintain-one-comment"
+    ],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "GitHub Actions workflows"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "OIDC tokens",
+      "cloud credentials",
+      "package registry credentials",
+      "deployment credentials"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-05-18T19:10:24Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-19",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-19",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "imposter action commits"
+    ],
+    "execution_trigger": "workflow references hijacked action tag",
+    "payload_behavior": [
+      "runner memory scraping",
+      "secret extraction",
+      "HTTPS exfiltration"
+    ]
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "t.m-kosche.com"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "python3 reading /proc/<Runner.Worker PID>/mem"
+    ],
+    "network_patterns": [
+      "HTTPS to t.m-kosche.com"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      "workflow references to affected actions"
+    ],
+    "process_hunts": [
+      "python3 /proc/*/mem reads"
+    ],
+    "network_hunts": [
+      "t.m-kosche.com"
+    ],
+    "ci_cd_hunts": [
+      "affected workflow runs"
+    ],
+    "registry_hunts": []
+  },
+  "open_questions": [
+    "cleanup status",
+    "victim count"
+  ],
+  "defender_takeaways": {
+    "detection": "Compare action tag targets and runner telemetry.",
+    "hunting": "Find workflows using affected actions.",
+    "remediation": "Rotate exposed secrets.",
+    "prevention": "Pin actions to SHAs."
+  }
+}

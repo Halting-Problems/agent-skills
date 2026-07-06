@@ -1,0 +1,7 @@
+// Replace fields to match your CSP report table.
+CspReports
+| where TimeGenerated between (datetime({SINCE}) .. datetime({UNTIL}))
+| where BlockedUri has_any ("{IOC_DOMAIN}", "{IOC_URL}")
+   or SourceFile has_any ("{AFFECTED_ASSET}", "{PACKAGE_NAME}")
+| project TimeGenerated, UserAgent, DocumentUri, BlockedUri, ViolatedDirective, SourceFile, LineNumber, ClientIP
+| order by TimeGenerated asc

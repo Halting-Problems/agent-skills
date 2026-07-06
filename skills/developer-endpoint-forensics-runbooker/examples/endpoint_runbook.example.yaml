@@ -1,0 +1,19 @@
+endpoint_runbook:
+  platforms:
+    - linux
+    - macos
+    - windows
+  collection_order:
+    - isolate from network if active malware is suspected
+    - preserve process and network state
+    - inventory developer credentials
+    - search package caches and IDE extension directories
+  reimage_criteria:
+    - confirmed credential stealer execution
+    - persistence mechanism found
+    - unknown native binary executed from package cache
+  rotation_order:
+    - GitHub tokens and SSH keys
+    - cloud CLI credentials
+    - package registry tokens
+    - deployment credentials

@@ -1,0 +1,198 @@
+{
+  "trace_id": "example-trace-0001",
+  "event_id": "example-npm-token-theft",
+  "canonical_publication_target": "nextjs-postgres",
+  "task_results": [
+    {
+      "task_id": "example-npm-token-theft-01-scope-gate",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/01-scope-gate.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/01-scope-gate.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-02-dedupe-and-disposition",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/02-dedupe-disposition.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/02-dedupe-disposition.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-03-evidence-plan",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/03-evidence-plan.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/03-evidence-plan.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-04-research-packet",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/04-research-packet.md",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/04-research-packet.md"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-05-artifact-provenance",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/05-artifact-provenance.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/05-artifact-provenance.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-06-soc-actionability",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/06-soc-actionability.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/06-soc-actionability.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-07-ioc-package-normalization",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/07-iocs-and-packages.json",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/07-iocs-and-packages.json"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-08-script-pack",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/scripts/",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/scripts/"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-09-downstream-impact",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/09-downstream-impact.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/09-downstream-impact.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-10-detection-pack",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/10-detection-pack/",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/10-detection-pack/"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-11-post-draft",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/11-post-draft.md",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/11-post-draft.md"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-12-schema-normalization",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/12-normalized-event-profile.json",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/12-normalized-event-profile.json"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-13-architecture-review",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/13-architecture_review.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/13-architecture_review.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-14-data-quality-review",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/14-data_quality_review.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/14-data_quality_review.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-15-incident-response-review",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/15-incident_response_review.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/15-incident_response_review.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-16-workflow-qa-review",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/16-workflow_qa_review.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/16-workflow_qa_review.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-17-technical-writing-review",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/17-technical_writing_review.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/17-technical_writing_review.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-18-synthesis-conflict-resolution",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/18-synthesis-conflicts.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/18-synthesis-conflicts.yaml"
+      ],
+      "blocking_gaps": []
+    },
+    {
+      "task_id": "example-npm-token-theft-19-publishability-gate",
+      "status": "pass",
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/19-publishability-gate.yaml",
+      "confidence": "medium",
+      "evidence_references": [
+        "~/hp-posts-info/example-npm-token-theft/19-publishability-gate.yaml"
+      ],
+      "blocking_gaps": []
+    }
+  ],
+  "publish_decision": "needs_review"
+}

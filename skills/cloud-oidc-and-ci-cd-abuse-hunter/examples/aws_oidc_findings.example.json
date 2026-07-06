@@ -1,0 +1,11 @@
+{
+  "platform": "aws",
+  "question_answered": "Did GitHub OIDC issue cloud credentials after exposure, and were those credentials used?",
+  "positive_signal": "AssumeRoleWithWebIdentity subjectFromWebIdentityToken maps to affected repo and follow-on API calls include IAM or deployment writes.",
+  "output_files": [
+    "github-oidc-trusted-roles.json",
+    "assume-role-with-web-identity.jsonl",
+    "follow-on-api-calls.jsonl",
+    "high-risk-api-calls.jsonl"
+  ]
+}

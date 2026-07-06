@@ -1,0 +1,24 @@
+candidate_incidents:
+  - candidate_id: actions-cool-github-actions-tag-hijack
+    title: actions-cool GitHub Actions tag hijack
+    first_seen: "2026-05-19"
+    candidate_threat_classes:
+      - github_actions_tag_hijack
+      - cicd_secret_theft
+    ecosystem:
+      - GitHub Actions
+    affected_assets:
+      - actions-cool/issues-helper
+    starting_sources:
+      - name: StepSecurity research post
+        url: https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials
+        source_role: PRIMARY_RESEARCH
+    dedupe_keys:
+      - github-actions:actions-cool/issues-helper
+      - domain:t.m-kosche.com
+    suggested_next_skill: supply-chain-compromise-researcher
+    confidence: medium
+    reason: Primary research reports a CI/CD supply-chain compromise with concrete IOCs.
+    collection_gaps:
+      - direct affected project statement
+      - cleanup and tag restoration time

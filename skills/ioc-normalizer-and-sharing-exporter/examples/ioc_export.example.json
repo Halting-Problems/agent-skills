@@ -1,0 +1,17 @@
+{
+  "event_id": "example-event",
+  "durable_indicators": [
+    {
+      "type": "package",
+      "value": "example-package",
+      "durability": "durable"
+    }
+  ],
+  "volatile_indicators": [
+    {
+      "type": "domain",
+      "value": "example.com",
+      "durability": "volatile"
+    }
+  ]
+}

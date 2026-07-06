@@ -1,0 +1,472 @@
+{
+  "site_worker_plan_version": "2.0",
+  "event_id": "example-npm-token-theft",
+  "event_name": "Example npm Token Theft",
+  "profile_path": "skills/site-worker/examples/sample-modular-event-profile.json",
+  "canonical_publication_target": "nextjs-postgres",
+  "legacy_paths_disallowed": [
+    "astro",
+    "d1-primary",
+    "static-primary"
+  ],
+  "critique_question_bank": "skills/site-worker/references/agent-pipeline-critique-questions.md",
+  "agency_review_lanes": "skills/site-worker/references/agency-agent-review-lanes.md",
+  "run_ledger_schema": "skills/site-worker/references/site-worker-run-ledger-schema.json",
+  "optional_halting_skills": [
+    "cloud-oidc-and-ci-cd-abuse-hunter",
+    "browser-side-supply-chain-exposure-analyst"
+  ],
+  "tasks": [
+    {
+      "task_id": "example-npm-token-theft-01-scope-gate",
+      "task_type": "halting_skill",
+      "specialist": "site-refresh-orchestrator",
+      "objective": "Decide whether Example npm Token Theft is in Halting Problems supply-chain scope.",
+      "depends_on": [],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/01-scope-gate.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Decision is one of in_scope, out_of_scope, or needs_primary_source.",
+        "Supply-chain angle is stated using package, registry, CI/CD, provenance, developer tooling, cloud, browser, extension, or artifact criteria.",
+        "Syndicated-only evidence is blocked unless a primary source is identified."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-02-dedupe-and-disposition",
+      "task_type": "halting_skill",
+      "specialist": "site-feed-curator-and-dedupe-skill",
+      "objective": "Decide whether Example npm Token Theft is new, duplicate, update_existing, campaign_child, or reject.",
+      "depends_on": [
+        "example-npm-token-theft-01-scope-gate"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/02-dedupe-disposition.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Disposition includes matched URLs, dedupe keys, event IDs, slugs, packages, advisories, and campaign IDs.",
+        "Update decisions name the canonical existing slug.",
+        "Campaign decisions cite hard correlation evidence, not date or ecosystem similarity alone."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-03-evidence-plan",
+      "task_type": "halting_skill",
+      "specialist": "site-worker",
+      "objective": "Create a source and artifact collection plan for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-02-dedupe-and-disposition"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/03-evidence-plan.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Plan lists required primary sources, registry metadata, artifact downloads, advisories, commits, releases, tags, and telemetry assumptions.",
+        "Each planned collection item includes why it is needed and what claim it can prove or disprove.",
+        "Unsafe execution of untrusted code is explicitly forbidden."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-04-research-packet",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-researcher",
+      "objective": "Build the evidence-backed research packet and claim ledger for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-03-evidence-plan"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/04-research-packet.md",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Every behavioral claim has source references and confidence.",
+        "Observed facts, inference, and unknowns are separated.",
+        "The packet includes a claim ledger with stable claim IDs."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-05-artifact-provenance",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-artifact-diff-lab + provenance-and-publishing-integrity-auditor",
+      "objective": "Verify artifact differences and publishing provenance for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-04-research-packet"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/05-artifact-provenance.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Package, release, container, extension, action, or artifact identities are verified or marked unknown with a reason.",
+        "Source-to-artifact, tag, signature, builder, registry, and timestamp evidence is captured when applicable.",
+        "Conflicting artifact evidence is represented as a conflict block."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-06-soc-actionability",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Turn Example npm Token Theft into SOC and appsec audit recipes.",
+      "depends_on": [
+        "example-npm-token-theft-04-research-packet",
+        "example-npm-token-theft-05-artifact-provenance"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/06-soc-actionability.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Hunts list telemetry source, fields, time windows, query text, and interpretation.",
+        "Each audit recipe has positive, negative, and inconclusive result handling.",
+        "Output answers whether a SOC analyst must clean any data before use."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-07-ioc-package-normalization",
+      "task_type": "halting_skill",
+      "specialist": "ioc-normalizer-and-sharing-exporter",
+      "objective": "Normalize IOCs, packages, versions, hashes, and repositories for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-04-research-packet"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/07-iocs-and-packages.json",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Machine-readable IOCs are raw and parseable.",
+        "Package coordinates include ecosystem, namespace, name, version/range, fixed version, and registry URL when known.",
+        "Low-confidence observables are labeled and not mixed with confirmed IOCs."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-08-script-pack",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Create runnable scripts, fixtures, manifests, and tests for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-06-soc-actionability",
+        "example-npm-token-theft-07-ioc-package-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/scripts/",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Scripts live in the research repo under the event slug.",
+        "Each script has a manifest, clean fixture, dirty fixture, and unit test.",
+        "Scripts contain known incident constants and no forbidden placeholders."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-09-downstream-impact",
+      "task_type": "halting_skill",
+      "specialist": "remediation-and-credential-rotation-planner",
+      "objective": "Assess credential, CI/CD, cloud, registry, browser, and endpoint downstream impact for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-05-artifact-provenance",
+        "example-npm-token-theft-06-soc-actionability"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/09-downstream-impact.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Applicability decisions exist for registry, GitHub, cloud, endpoint, browser/CDN, and deployment modules.",
+        "Credential rotation advice maps to specific token types or providers.",
+        "Closure gates are testable and incident-specific."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-10-detection-pack",
+      "task_type": "halting_skill",
+      "specialist": "detection-pack-generator",
+      "objective": "Generate portable detection content for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-06-soc-actionability",
+        "example-npm-token-theft-07-ioc-package-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/10-detection-pack/",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Detections include KQL, SPL, Sigma, YARA, osquery, shell, or cloud queries only when applicable.",
+        "Each detection lists required telemetry fields and false-positive guidance.",
+        "Detection pack validator passes."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-11-post-draft",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-technical-writer",
+      "objective": "Draft the Halting Problems post for Example npm Token Theft from validated structured inputs.",
+      "depends_on": [
+        "example-npm-token-theft-04-research-packet",
+        "example-npm-token-theft-05-artifact-provenance",
+        "example-npm-token-theft-06-soc-actionability",
+        "example-npm-token-theft-07-ioc-package-normalization",
+        "example-npm-token-theft-08-script-pack",
+        "example-npm-token-theft-09-downstream-impact",
+        "example-npm-token-theft-10-detection-pack"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/11-post-draft.md",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Narrative preserves operational details from specialist outputs.",
+        "Every claim-heavy paragraph has nearby citations.",
+        "Machine-readable blocks and prose defanging rules are followed."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-12-schema-normalization",
+      "task_type": "halting_skill",
+      "specialist": "post-schema-normalizer-and-migrator",
+      "objective": "Normalize final post schema and event profile for Example npm Token Theft.",
+      "depends_on": [
+        "example-npm-token-theft-11-post-draft"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/12-normalized-event-profile.json",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Event profile JSON is valid.",
+        "Source count matches numbered sources.",
+        "Normalized facts are ready for Postgres import."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-13-architecture-review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique topology, dependency graph, context boundaries, failure handling, and observability.",
+      "depends_on": [
+        "example-npm-token-theft-12-schema-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/13-architecture_review.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Review output follows agency_review_result schema.",
+        "Reviewer directly answers assigned critique questions.",
+        "Blocking findings include exact upstream task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ],
+      "review_lane": "architecture_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-multi-agent-systems-architect.md"
+    },
+    {
+      "task_id": "example-npm-token-theft-14-data-quality-review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique data quality, normalization, quarantine paths, auditability, and zero-data-loss assumptions.",
+      "depends_on": [
+        "example-npm-token-theft-12-schema-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/14-data_quality_review.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Review output follows agency_review_result schema.",
+        "Reviewer directly answers assigned critique questions.",
+        "Blocking findings include exact upstream task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ],
+      "review_lane": "data_quality_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md"
+    },
+    {
+      "task_id": "example-npm-token-theft-15-incident-response-review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique SOC/IR usability, hunt clarity, containment guidance, and closure gates.",
+      "depends_on": [
+        "example-npm-token-theft-12-schema-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/15-incident_response_review.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Review output follows agency_review_result schema.",
+        "Reviewer directly answers assigned critique questions.",
+        "Blocking findings include exact upstream task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ],
+      "review_lane": "incident_response_review",
+      "agent_profile_path": "/home/sam/agency-agents/security/security-incident-responder.md"
+    },
+    {
+      "task_id": "example-npm-token-theft-16-workflow-qa-review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique whether the chained workflow is modular, testable, and free of handoff ambiguity.",
+      "depends_on": [
+        "example-npm-token-theft-12-schema-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/16-workflow_qa_review.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "Review output follows agency_review_result schema.",
+        "Reviewer directly answers assigned critique questions.",
+        "Blocking findings include exact upstream task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ],
+      "review_lane": "workflow_qa_review",
+      "agent_profile_path": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md"
+    },
+    {
+      "task_id": "example-npm-token-theft-17-technical-writing-review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique clarity, source-backed writing, and preservation of operational detail.",
+      "depends_on": [
+        "example-npm-token-theft-12-schema-normalization"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/17-technical_writing_review.yaml",
+      "blocks_publish": false,
+      "acceptance_criteria": [
+        "Review output follows agency_review_result schema.",
+        "Reviewer directly answers assigned critique questions.",
+        "Blocking findings include exact upstream task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ],
+      "review_lane": "technical_writing_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-technical-writer.md"
+    },
+    {
+      "task_id": "example-npm-token-theft-18-synthesis-conflict-resolution",
+      "task_type": "halting_skill",
+      "specialist": "site-worker",
+      "objective": "Merge specialist and agency-agent outputs for Example npm Token Theft; resolve conflicts explicitly.",
+      "depends_on": [
+        "example-npm-token-theft-13-architecture-review",
+        "example-npm-token-theft-14-data-quality-review",
+        "example-npm-token-theft-15-incident-response-review",
+        "example-npm-token-theft-16-workflow-qa-review",
+        "example-npm-token-theft-17-technical-writing-review"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/18-synthesis-conflicts.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "All blocking reviewer findings are fixed or carried as blocking gaps.",
+        "Conflicting claims are not averaged; they are resolved or marked disputed.",
+        "Final result preserves reviewer warnings."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    },
+    {
+      "task_id": "example-npm-token-theft-19-publishability-gate",
+      "task_type": "halting_skill",
+      "specialist": "site-worker",
+      "objective": "Decide whether Example npm Token Theft is publish_ready, needs_review, reject, update_existing, attach_to_campaign, or duplicate.",
+      "depends_on": [
+        "example-npm-token-theft-18-synthesis-conflict-resolution"
+      ],
+      "artifact_path": "~/hp-posts-info/example-npm-token-theft/19-publishability-gate.yaml",
+      "blocks_publish": true,
+      "acceptance_criteria": [
+        "No required agency-agent review lane has decision block.",
+        "Postgres import readiness is confirmed for sources, claims, evidence, package facts, IOCs, scripts, detections, and remediation gates.",
+        "Next.js/API/feed compatibility is confirmed; Astro and D1 are not treated as canonical publication targets.",
+        "If blocked, exact collection or fix steps are listed."
+      ],
+      "constraints": [
+        "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Return structured JSON or YAML when the task contract defines a schema.",
+        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+      ]
+    }
+  ],
+  "final_validation": [
+    "validate modular task dependencies",
+    "validate agency-agent review results",
+    "validate raw machine-readable IOCs",
+    "validate package coordinates",
+    "validate claim evidence coverage",
+    "validate script fixtures and tests",
+    "validate Postgres import readiness",
+    "validate Next.js feed/API output"
+  ]
+}

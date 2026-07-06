@@ -1,0 +1,14 @@
+rotation_plan:
+  event_id: actions-cool-github-actions-tag-hijack
+  rotation_scope:
+    - credential_type: GitHub Actions secrets
+      priority: immediate
+      audit_before_rotation:
+        - enumerate affected workflow runs and job secret scope
+      revoke_or_rotate_steps:
+        - rotate all secrets reachable by confirmed or presumed exposed jobs
+      downstream_abuse_hunts:
+        - github_downstream_audit.sh
+  remediation_gates:
+    containment_complete:
+      - affected action reference removed or pinned to verified safe SHA

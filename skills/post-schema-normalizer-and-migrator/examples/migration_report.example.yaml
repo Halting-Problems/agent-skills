@@ -1,0 +1,11 @@
+migration_report:
+  input_file: microsoft-durabletask-pypi-compromise.md
+  output_file: microsoft-durabletask-pypi-compromise.normalized.md
+  detected_format: Format B
+  changes_made:
+    - converted machine-readable profile array to object
+    - normalized source fields
+    - added empty remediation_gates object
+  warnings:
+    - manual review required for campaign relationship
+  validation_status: needs_review
