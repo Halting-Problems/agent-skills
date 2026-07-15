@@ -42,9 +42,9 @@ candidate_incidents:
 
 ## Supply-chain scope gate
 
-Discovery is scoped to supply-chain attacks or supply-chain-adjacent security events. Promote candidates only when the event plausibly involves repository compromise, package compromise, CI/CD abuse, developer tooling compromise, signed artifact compromise, registry abuse, provenance abuse, dependency confusion, malicious package distribution, maintainer/account takeover, browser/CDN supply-chain exposure, or content supply-chain compromise.
+Discovery is scoped to supply-chain attacks, supply-chain-adjacent security events, or noteworthy exploited vulnerabilities (CVEs/KEVs) and zero-days with active exploitation in the wild. Promote candidates only when the event plausibly involves repository compromise, package compromise, CI/CD abuse, developer tooling compromise, signed artifact compromise, registry abuse, provenance abuse, dependency confusion, malicious package distribution, maintainer/account takeover, browser/CDN supply-chain exposure, content supply-chain compromise, or noteworthy exploited vulnerabilities/zero-days.
 
-Do not promote generic CVE/KEV vulnerability items, generic KEV roundups, ransomware/vulnerability news, or vendor advisories unless the direct evidence ties the event to a software supply-chain or software-delivery compromise angle. If the supply-chain angle is unclear, put the item in `needs_review` or `rejected` with the missing evidence instead of promoting it as a survivor.
+Do not promote generic, unexploited CVE/KEV vulnerability items, generic KEV roundups, generic ransomware/vulnerability news, or vendor advisories unless the direct evidence ties the event to a software supply-chain compromise, software-delivery compromise angle, or active exploitation in the wild. If the scope angle is unclear, put the item in `needs_review` or `rejected` with the missing evidence instead of promoting it as a survivor.
 
 ## Rules
 
@@ -53,7 +53,7 @@ Do not promote generic CVE/KEV vulnerability items, generic KEV roundups, ransom
 - Do not merge incidents into campaigns unless hard indicators support it.
 - Record exact URLs.
 - Give every candidate a stable dedupe key.
-- Every promoted candidate must explain its supply-chain or supply-chain-adjacent angle in `reason`.
+- Every promoted candidate must explain its supply-chain, supply-chain-adjacent, or active exploitation angle in `reason`.
 
 ## Discovery pitfalls and feed handling
 

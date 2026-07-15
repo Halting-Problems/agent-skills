@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site Worker Decision Artifact",
+  "type": "object",
+  "required": [
+    "task_id",
+    "source_version_hash",
+    "completed_at",
+    "decision",
+    "blocking_findings"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_version_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decision": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "block",
+        "in_scope",
+        "out_of_scope",
+        "needs_primary_source",
+        "new",
+        "update",
+        "campaign",
+        "duplicate",
+        "review",
+        "reject",
+        "publish_ready"
+      ]
+    },
+    "blocking_findings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": true
+}

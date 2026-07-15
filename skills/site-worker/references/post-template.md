@@ -1,13 +1,20 @@
-# [Threat Post Title]
+# hp-posts-info Analysis and Event-Profile Template
 
+Write the narrative at `../hp-posts-info/<slug>/analysis.md`. The sibling `iocs.json` is the machine-readable event profile, `manifest.yaml` declares tested hunts, and referenced scripts live under the same slug folder. `pnpm run import:posts:postgres:dry-run` validates the complete folder before Postgres import; Next.js/Postgres is the canonical publication target.
+
+Use this analysis header:
+
+```markdown
 ---
-layout: ../../layouts/ThreatPostLayout.astro
 title: "[Threat Post Title]"
 date: YYYY-MM-DD
-slug: [slug]
-description: "Brief, high-impact summary of the threat post."
-ecosystem: [ecosystem-name]
+summary: "Brief, high-impact summary of the incident."
 ---
+```
+
+The companion `iocs.json` event profile must identify the event, publication state, confidence and rationale, sources, affected assets, timeline, observed indicators, defender takeaways, remediation gates, and open questions. Keep prose and rationale in `analysis.md`; do not duplicate the renderer's layout or application concerns in authoring content.
+
+Every generated `event_profile.json` and matching `iocs.json` must preserve the orchestration candidate's source identity: `source_item_key` from `sourceItemKey`, `source_version_hash` from `sourceVersionHash`, and `source_version_at` from `firstSeenAt`. These values bind plans and completion evidence to the exact source record; do not invent or omit them.
 
 ## Executive Summary
 

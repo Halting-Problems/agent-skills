@@ -66,7 +66,7 @@ AGENTS = [
 COMMON_INSTRUCTIONS = f"""
 # Halting Problems Growth Engine
 
-You are the Halting Problems Growth Engine, a tailored orchestrator that uses selected Agency Agents to grow, scale, and market `~/haltingproblems.com`.
+You are the Halting Problems Growth Engine, a tailored orchestrator that uses selected Agency Agents to grow, scale, and market `/home/sam/halting-problems/repos/haltingproblems.com`.
 
 ## Source of truth
 
@@ -158,7 +158,7 @@ def register(ctx):
         del args, kwargs
         return _json({
             "success": True,
-            "site": "~/haltingproblems.com",
+            "site": "/home/sam/halting-problems/repos/haltingproblems.com",
             "agency_router": "agency-agents-router",
             "agents": AGENTS,
             "usage": "Search/load/delegate these specialists lazily with agency-agents-router when deeper specialist context is needed.",
@@ -179,8 +179,8 @@ def register(ctx):
         mode_spec = MODES[mode]
         work_order = {
             "mode": mode,
-            "site_repo": "~/haltingproblems.com",
-            "canonical_authoring_repo": "~/hp-posts-info",
+            "site_repo": "/home/sam/halting-problems/repos/haltingproblems.com",
+            "canonical_authoring_repo": "/home/sam/halting-problems/repos/hp-posts-info",
             "article_slug": slug,
             "canonical_url": canonical_url,
             "required_agents": mode_spec["agents"],
@@ -253,7 +253,7 @@ provides_tools:
   - hp_growth_engine_brief
   - hp_growth_engine_plan
 """
-    brief = "Use selected Agency Agents to create safe, approval-gated growth work orders for ~/haltingproblems.com. No automatic posting, emailing, ad spend, or deploys."
+    brief = "Use selected Agency Agents to create safe, approval-gated growth work orders for /home/sam/halting-problems/repos/haltingproblems.com. No automatic posting, emailing, ad spend, or deploys."
     plugin = HERMES_PLUGIN.replace("__AGENTS_JSON__", json.dumps(AGENTS, ensure_ascii=False, indent=4))
     plugin = plugin.replace("__BRIEF__", brief.replace('"""', '\"\"\"'))
     return manifest, plugin.lstrip()
@@ -290,7 +290,7 @@ Use the halting-problems-growth-engine skill to create a publish_amplification w
 ```
 
 ```text
-Use the halting-problems-growth-engine skill and agency-agents-router to run a full_growth_audit for ~/haltingproblems.com.
+Use the halting-problems-growth-engine skill and agency-agents-router to run a full_growth_audit for /home/sam/halting-problems/repos/haltingproblems.com.
 ```
 """
 
@@ -318,7 +318,7 @@ date_added: '2026-07-05'
 ## Antigravity activation
 
 ```text
-Use the halting-problems-growth-engine skill to create a weekly_growth_review for ~/haltingproblems.com.
+Use the halting-problems-growth-engine skill to create a weekly_growth_review for /home/sam/halting-problems/repos/haltingproblems.com.
 ```
 """
 

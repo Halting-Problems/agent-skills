@@ -13,9 +13,9 @@ This skill coordinates `haltingproblems-source-watcher` and `site-worker`. It fi
 
 ## Coverage scope gate
 
-All discovery, dedupe, and publishing decisions are scoped to supply-chain attacks or supply-chain-adjacent security events. Survivors must have a clear relationship to repository compromise, package compromise, CI/CD abuse, developer tooling compromise, signed artifact compromise, registry abuse, provenance abuse, dependency confusion, malicious package distribution, maintainer/account takeover, browser/CDN supply-chain exposure, or content supply-chain compromise.
+All discovery, dedupe, and publishing decisions are scoped to supply-chain attacks, supply-chain-adjacent security events, or noteworthy exploited vulnerabilities (CVEs/KEVs) and zero-days with active exploitation in the wild. Survivors must have a clear relationship to repository compromise, package compromise, CI/CD abuse, developer tooling compromise, signed artifact compromise, registry abuse, provenance abuse, dependency confusion, malicious package distribution, maintainer/account takeover, browser/CDN supply-chain exposure, content supply-chain compromise, or noteworthy exploited vulnerabilities/zero-days.
 
-Do not promote generic CVE/KEV vulnerability items, generic KEV roundups, ransomware/vulnerability news, or vendor advisories unless the direct evidence ties the event to a software supply-chain or software-delivery compromise angle. Generic CVE/KEV items should be rejected or pruned under the coverage-scope policy, not sent to site-worker as refresh work.
+Do not promote generic, unexploited CVE/KEV vulnerability items, generic KEV roundups, generic ransomware/vulnerability news, or vendor advisories unless the direct evidence ties the event to a software supply-chain compromise, software-delivery compromise angle, or active exploitation in the wild. Generic, unexploited CVE/KEV items should be rejected or pruned under the coverage-scope policy, not sent to site-worker as refresh work.
 
 ---
 
@@ -34,8 +34,8 @@ Do not promote generic CVE/KEV vulnerability items, generic KEV roundups, ransom
 1. Load and follow `haltingproblems-source-watcher`.
 2. Run source discovery for the requested date window and topic scope.
 3. Build or read an existing-site index:
-   - current post slugs
-   - source URLs already cited by posts
+   - canonical Postgres incident and candidate slugs
+   - source URLs linked to Postgres incident and candidate records
    - event IDs, package names, advisories, repositories, CVEs, domains, hashes, or registry coordinates already covered
 4. Dedupe candidates using stable `dedupe_keys`, exact source URLs, canonicalized URLs, and known post metadata.
 5. Reject candidates based only on secondary or syndicated news unless they point to a direct or primary source that can be used.
@@ -46,7 +46,7 @@ Do not promote generic CVE/KEV vulnerability items, generic KEV roundups, ransom
 8. Merge completed worker results into a site refresh summary with publish decisions, created/updated files, validation results, and blocking gaps.
 9. When scheduled refreshes become too prompt-heavy or trigger provider guardrails, split the workflow into two cron jobs: a discovery/dedupe job that returns strict YAML locally, then a publisher job that consumes that output via `context_from` and returns `[SILENT]` when there are no survivor candidates.
 
-Use `scripts/build_refresh_work_orders.py` when you have source-watcher JSON/YAML output and an index. The script emits one site-worker work order per unreported candidate. Prefer primary feeds and advisories first (for example CISA KEV JSON, vendor RSS, and researcher RSS), then dedupe against canonical Postgres-backed Next.js feed/API exports and known source URLs.
+Use `scripts/build_refresh_work_orders.py` only as a compatibility wrapper. It delegates source-watcher JSON/YAML output to the sibling website's typed `tooling/orchestration/disposition-candidates.ts` command, which reads canonical Postgres facts and emits work orders. Prefer primary feeds and advisories first (for example CISA KEV JSON, vendor RSS, and researcher RSS). If discovery returns zero candidates, still run the explicit exploited-vulnerability enrichment path before returning `[SILENT]`.
 
 Session-derived pitfalls and indexing notes live in:
 - [references/refresh-dedupe-indexing.md](references/refresh-dedupe-indexing.md) — build the index from canonical Postgres-backed feed/API data when available, normalize URLs before comparing, and treat zero survivors as a valid “already covered” result instead of synthesizing workers.
@@ -54,7 +54,9 @@ Session-derived pitfalls and indexing notes live in:
 - [references/cron-split-pattern.md](references/cron-split-pattern.md) — split guarded cron refreshes into discovery and publisher jobs chained with `context_from`, with `[SILENT]` on empty survivor sets.
 - [references/supply-chain-scope-gate.md](references/supply-chain-scope-gate.md) — durable scope gate and cron prompt pattern for keeping refreshes focused on supply-chain attacks and supply-chain-adjacent security events.
 
-When a window yields only already-reported items, return a clean deduped summary rather than forcing a worker dispatch.
+When a window yields only already-reported items or no source-watcher candidates, return a clean deduped summary rather than forcing a worker dispatch. Durable candidate and source-version records in Postgres are the dedupe authority; do not regenerate website-root JSON state files.
+
+If Sam says the cron should “add all of them” or otherwise asks for automatic coverage, update the cron out of report-only mode. The prompt should explicitly allow local edits in `haltingproblems.com` and `hp-posts-info`, require one local research folder per new in-scope item, keep production push/deploy/import/social posting disabled unless separately requested, and validate the created folders with focused `hp-posts-info` tests, importer dry-runs, `pnpm check`, `pnpm test`, and `pnpm build` when feasible.
 
 ---
 
@@ -90,7 +92,7 @@ Modular planning requirements:
 - Dispatch required agency-agent review lanes from `/home/sam/agency-agents`.
 - Answer the critique questions in `skills/site-worker/references/agent-pipeline-critique-questions.md`.
 - Require agency-agent review lanes for architecture, data quality/remediation, incident-response usability, workflow QA, and technical documentation before publishability.
-- Treat Next.js/Postgres as canonical and do not publish based on Astro/D1/static fallback data.
+- Treat Next.js/Postgres as canonical. D1 is an explicitly versioned read replica; do not publish from D1 or static fallback data.
 
 Depth requirements:
 - Prefer direct sources, primary research, registry metadata, repository history, package/release artifacts, advisories, and original researcher posts.
@@ -122,10 +124,10 @@ Validation:
 - Confirm sourceCount matches numbered sources.
 - Confirm final post prose defangs network IOCs outside machine-readable blocks.
 - Run `python skills/site-worker/scripts/site_worker_plan.py <event_profile.json> --output ~/hp-posts-info/{candidate_id}/site-worker-plan.json` and validate the result with `python skills/site-worker/scripts/validate_site_worker_plan.py ~/hp-posts-info/{candidate_id}/site-worker-plan.json` before drafting or publishing.
-- Run `hp-posts-info` tests for the slug, then run the website Postgres importer dry-run and import against the intended database.
+- Run `hp-posts-info` tests for the slug, then run `pnpm run import:posts:postgres:dry-run` and import against the intended database.
 - Run `pnpm check`, `pnpm test`, and `pnpm build` in the website repository before calling the refresh publish-ready.
 - Verify `/threat/{candidate_id}`, `/api/feed`, and relevant search/API responses read the expected facts, IOCs, sources, and scripts from Postgres.
-- Treat `pnpm run validate:content`, Astro content, D1 sync, and static fallback files as legacy compatibility checks only, not as the canonical publication gate.
+- Verify any D1 replication is explicitly versioned and cannot act as a fallback authority.
 
 Return:
 - site_worker_result YAML

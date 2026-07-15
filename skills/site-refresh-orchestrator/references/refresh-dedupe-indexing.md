@@ -4,14 +4,14 @@ Session notes from the 2026-06-19 site refresh run.
 
 ## Canonical index source
 
-Build the existing-site index from `src/content/threat-posts/*.md` only.
-Do not use `dist/`, temporary exports, or scratch JSON as the source of truth.
+Build the existing-site index from canonical Postgres incidents and candidate records. Include stable incident IDs, slugs, source URLs, package/repository identities, campaign relationships, publication state, and candidate dispositions.
+Do not use rendered application output, D1 replica rows, temporary exports, or scratch JSON as the source of truth.
 
 ## URL comparison behavior
 
 - Normalize URLs before comparing them.
 - Strip tracking query parameters such as `utm_*`, `fbclid`, `gclid`, `mc_cid`, `mc_eid`, and `igshid`.
-- Compare canonicalized URLs against the source URLs cited by the site posts.
+- Compare canonicalized URLs against source records linked to Postgres incidents and candidates.
 
 ## Dedupe rules that held up in this session
 
@@ -21,7 +21,7 @@ Do not use `dist/`, temporary exports, or scratch JSON as the source of truth.
 
 ## Work-order builder usage
 
-`scripts/build_refresh_work_orders.py` can take source-watcher output plus an existing index and emit one site-worker prompt per surviving candidate. This is useful even when the final answer is zero new candidates, because it makes the dedupe result auditable.
+`scripts/build_refresh_work_orders.py` is a compatibility wrapper around the sibling website's `tooling/orchestration/disposition-candidates.ts`. The typed command combines source-watcher output with canonical Postgres facts and emits one site-worker prompt per surviving candidate. A zero-survivor result remains auditable in the durable dossier run and candidate records.
 
 ## Practical note
 

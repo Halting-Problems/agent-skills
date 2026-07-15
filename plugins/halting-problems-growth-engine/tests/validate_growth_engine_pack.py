@@ -66,7 +66,7 @@ def validate_source_pack() -> None:
     playbook = read(ROOT / "GROWTH_ENGINE.md")
     for agent in REQUIRED_AGENTS:
         assert_true(agent in playbook, f"GROWTH_ENGINE.md missing {agent}")
-    assert_true("~/haltingproblems.com" in playbook, "playbook missing site path")
+    assert_true("/home/sam/halting-problems/repos/haltingproblems.com" in playbook, "playbook missing site path")
     assert_true("no automatic posting" in playbook.lower(), "playbook missing posting safety rule")
 
 
@@ -106,7 +106,7 @@ def validate_hermes_plugin() -> None:
 def validate_hermes_skill() -> None:
     text = read(INSTALLED_FILES["hermes_skill"])
     assert_true("name: halting-problems-growth-engine" in text, "Hermes skill frontmatter wrong")
-    for needle in ["agency-agents-router", "~/haltingproblems.com", "Growth Hacker", "SEO Specialist"]:
+    for needle in ["agency-agents-router", "/home/sam/halting-problems/repos/haltingproblems.com", "Growth Hacker", "SEO Specialist"]:
         assert_true(needle in text, f"Hermes skill missing {needle}")
 
 

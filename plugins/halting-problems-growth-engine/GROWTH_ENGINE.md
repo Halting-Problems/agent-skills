@@ -2,7 +2,7 @@
 
 ## Mission
 
-The Halting Problems Growth Engine is a tailored Agency Agents pack for growing, scaling, and marketing `~/haltingproblems.com` without weakening the site's threat-intelligence quality bar.
+The Halting Problems Growth Engine is a tailored Agency Agents pack for growing, scaling, and marketing `/home/sam/halting-problems/repos/haltingproblems.com` without weakening the site's threat-intelligence quality bar.
 
 It turns each canonical Halting Problems incident, campaign, or capability update into a repeatable growth loop:
 
@@ -15,8 +15,8 @@ It turns each canonical Halting Problems incident, campaign, or capability updat
 
 ## Site Context
 
-- Primary repo: `~/haltingproblems.com`.
-- Canonical post authoring repo: `~/hp-posts-info`.
+- Primary repo: `/home/sam/halting-problems/repos/haltingproblems.com`.
+- Canonical post authoring repo: `/home/sam/halting-problems/repos/hp-posts-info`.
 - Canonical serving path: `hp-posts-info/<slug>/` → Postgres importer → Next.js/Postgres pages and APIs.
 - Legacy Astro/D1/static paths are migration references unless a task explicitly targets them.
 - Subscriber storage: Cloudflare D1 table `subscribers` exists, but marketing email requires consent, sender authentication, and explicit approval before sending.
@@ -173,18 +173,18 @@ Use the SEO Specialist and Growth Hacker agents to review this growth backlog.
 Reference the skill:
 
 ```text
-Use the halting-problems-growth-engine skill to run a weekly_growth_review for ~/haltingproblems.com.
+Use the halting-problems-growth-engine skill to run a weekly_growth_review for /home/sam/halting-problems/repos/haltingproblems.com.
 ```
 
 ## Verification Commands
 
-From `~/haltingproblems.com`, use these when relevant:
+From `/home/sam/halting-problems/repos/haltingproblems.com`, use these when relevant:
 
 ```bash
 pnpm check
 pnpm test
 pnpm build
-pnpm exec tsx scripts/import-posts-info-to-postgres.ts --posts-info-dir ../hp-posts-info --dry-run
+pnpm exec tsx tooling/content/import-posts-info-to-postgres.ts --posts-info-dir ../hp-posts-info --dry-run
 curl -fsS http://localhost:3000/api/feed
 curl -fsS 'http://localhost:3000/api/search?q=<known-term>'
 ```

@@ -1,6 +1,6 @@
 # Halting Problems Growth Engine Pack
 
-Tailored global agent/plugin pack for using `/home/sam/agency-agents` to grow, scale, and market `~/haltingproblems.com` across Hermes, Codex, and Antigravity.
+Tailored global agent/plugin pack for using `/home/sam/agency-agents` to grow, scale, and market `/home/sam/halting-problems/repos/haltingproblems.com` across Hermes, Codex, and Antigravity.
 
 ## What this installs
 
@@ -29,7 +29,7 @@ Canonical operating model: [`GROWTH_ENGINE.md`](GROWTH_ENGINE.md).
 ## Install
 
 ```bash
-cd ~/haltingproblems.com
+cd /home/sam/halting-problems/repos/haltingproblems.com
 python agent-plugins/halting-problems-growth-engine/install.py
 ```
 
@@ -60,7 +60,7 @@ The Hermes pack is designed to cooperate with the already-enabled `agency-agents
 ## Codex usage
 
 ```text
-Use the Halting Problems Growth Engine agent to run a full_growth_audit for ~/haltingproblems.com.
+Use the Halting Problems Growth Engine agent to run a full_growth_audit for /home/sam/halting-problems/repos/haltingproblems.com.
 ```
 
 ## Antigravity usage

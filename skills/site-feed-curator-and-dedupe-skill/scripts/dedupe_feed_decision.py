@@ -1,84 +1,41 @@
 #!/usr/bin/env python3
-"""Compare a candidate event profile to existing profiles and suggest a feed action.
+"""DEPRECATED compatibility wrapper for the TypeScript disposition engine.
 
 Usage:
-  python dedupe_feed_decision.py candidate.json existing/*.json
+  python dedupe_feed_decision.py candidate.json [ignored-existing-profiles ...]
+
+The existing-profile arguments are accepted only for command compatibility.
+Canonical facts are loaded from Postgres by scripts/disposition-candidates.ts.
 """
 from __future__ import annotations
 
 import argparse
-import json
-import re
+import subprocess
+import sys
 from pathlib import Path
 
 
-def slugify(text: str) -> str:
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text).strip("-")
-    return text or "unknown-event"
-
-
-def keys(profile: dict) -> set[str]:
-    out = set()
-    event_id = profile.get("event_id")
-    if event_id:
-        out.add(f"event_id:{event_id}")
-    assets = profile.get("affected_assets", {})
-    for pkg in assets.get("packages", []) or []:
-        out.add(f"package:{pkg}")
-    for repo in assets.get("repositories", []) or []:
-        out.add(f"repo:{repo}")
-    iocs = profile.get("iocs", {})
-    for d in iocs.get("domains", []) or []:
-        out.add(f"domain:{d}")
-    for h in iocs.get("hashes", []) or []:
-        out.add(f"hash:{h}")
-    return out
+REPO_ROOT = Path(__file__).resolve().parents[3]
+TS_CLI = REPO_ROOT / "scripts" / "disposition-candidates.ts"
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("candidate")
-    parser.add_argument("existing", nargs="*")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("candidate", type=Path)
+    parser.add_argument("existing", nargs="*", help="deprecated and ignored; Postgres is canonical")
+    parser.add_argument("--facts", type=Path, help="test-only disposition facts JSON")
     args = parser.parse_args()
 
-    candidate = json.loads(Path(args.candidate).read_text(encoding="utf-8"))
-    ckeys = keys(candidate)
-    matches = []
-
-    for path in args.existing:
-        profile = json.loads(Path(path).read_text(encoding="utf-8"))
-        overlap = sorted(ckeys & keys(profile))
-        if overlap:
-            matches.append({
-                "path": path,
-                "event_id": profile.get("event_id"),
-                "event_name": profile.get("event_name"),
-                "overlap": overlap,
-            })
-
-    if not matches:
-        action = "new_post"
-        reason = "No dedupe key overlap with existing profiles."
-    elif any(len(m["overlap"]) >= 2 for m in matches):
-        action = "update_existing"
-        reason = "Multiple dedupe keys overlap with an existing profile."
-    else:
-        action = "needs_review"
-        reason = "Single dedupe key overlap. Review for campaign or related event."
-
-    slug = slugify(candidate.get("event_name") or candidate.get("event_id") or "unknown-event")
-    print(json.dumps({
-        "action": action,
-        "matched_existing_posts": matches,
-        "dedupe_keys": sorted(ckeys),
-        "parent_campaign_id": candidate.get("parent_campaign_id", "none"),
-        "child_event_id": candidate.get("event_id", ""),
-        "reason": reason,
-        "required_updates": [],
-        "canonical_slug": f"{slug}.md",
-    }, indent=2))
-    return 0
+    print(
+        "DEPRECATED: use `pnpm tsx scripts/disposition-candidates.ts`; "
+        "legacy existing-profile files are ignored.",
+        file=sys.stderr,
+    )
+    command = ["pnpm", "exec", "tsx", str(TS_CLI), str(args.candidate)]
+    if args.facts:
+        command.extend(["--facts", str(args.facts)])
+    completed = subprocess.run(command, cwd=REPO_ROOT, check=False)
+    return completed.returncode
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ Use this when Sam asks to deploy one logical change while the main checkout cont
 
 ## Why
 
-This avoids accidentally shipping unrelated local changes from `/home/sam/haltingproblems.com` while still letting the user move quickly.
+This avoids accidentally shipping unrelated local changes from `/home/sam/halting-problems/repos/haltingproblems.com` while still letting the user move quickly.
 
 ## Verification examples
 

@@ -8,7 +8,7 @@ Use this when Sam asks for a dev/preview page but explicitly says not to publish
 2. Verify locally before exposing a preview:
    - `pnpm check`
    - `pnpm test`
-   - `pnpm exec tsx scripts/import-posts-info-to-postgres.ts --posts-info-dir ../hp-posts-info --dry-run`
+   - `pnpm exec tsx tooling/content/import-posts-info-to-postgres.ts --posts-info-dir ../hp-posts-info --dry-run`
    - `pnpm build`
 3. Check whether a built Next app is already serving port 3000 before starting another one:
    - `ss -ltnp 'sport = :3000' || true`

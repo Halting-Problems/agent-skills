@@ -61,7 +61,7 @@ Use these questions before a candidate can be marked publish-ready. Every final 
 ## Feed, API, And Site Publication
 
 - Does the output write canonical facts to Postgres through the approved import path?
-- Does the Next.js API/feed read from canonical Postgres facts instead of legacy Astro/D1/static fallbacks?
+- Does the Next.js API/feed read from canonical Postgres facts while any D1 output remains an explicitly versioned read replica with no fallback authority?
 - Does `/api/feed` include valid affected package data and omit malformed entries?
 - Does the publication path preserve claim evidence and source mappings?
 - Can a downstream user reconstruct why the post was published, rejected, updated, or blocked?

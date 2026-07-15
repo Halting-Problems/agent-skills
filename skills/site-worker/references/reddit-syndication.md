@@ -6,7 +6,7 @@ Use this when a Halting Problems publishing workflow should automatically post n
 
 - Trigger the Reddit poster only after a new site post is successfully published and deployed.
 - Current runner path:
-  `/home/sam/haltingproblems.com/scripts/reddit_user_crossposter/run_sync.sh --max-items 1`
+  `/home/sam/halting-problems/repos/haltingproblems.com/integrations/reddit/user-crossposter/run_sync.sh --max-items 1`
 - Current feed source:
   `https://haltingproblems.com/feed.xml`
 - Current target automation is narrowed to:
@@ -42,7 +42,7 @@ Seed at minimum:
 When Sam asks to pause or disable Reddit syndication, update the publisher cron prompt rather than pausing the whole site refresh pipeline. Keep discovery and publishing enabled, but add explicit negative instructions to the publisher job:
 
 - Do not run the Reddit user crossposter.
-- Do not call `scripts/reddit_user_crossposter/run_sync.sh`.
+- Do not call `integrations/reddit/user-crossposter/run_sync.sh`.
 - Do not post, crosspost, or syndicate new Halting Problems articles to Reddit.
 - If a new article is published, report that Reddit syndication is intentionally disabled.
 
@@ -50,7 +50,7 @@ Verify the cron prompt no longer contains the old automatic `run_sync.sh --max-i
 
 ## Verification pattern
 
-1. Run unit tests for `scripts/reddit_user_crossposter`.
+1. Run unit tests for `integrations/reddit/user-crossposter`.
 2. Run `./run_sync.sh --dry-run --max-items 1` with the real state file to confirm no duplicate post is planned.
 3. Run a second dry-run against a temporary empty `{}` state file to confirm the newest feed item would be selected for Reddit posting.
 4. Only then enable or update the publisher cron workflow that invokes the runner after deploy.

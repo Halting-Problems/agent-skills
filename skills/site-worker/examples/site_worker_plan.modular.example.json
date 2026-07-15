@@ -5,7 +5,6 @@
   "profile_path": "skills/site-worker/examples/sample-modular-event-profile.json",
   "canonical_publication_target": "nextjs-postgres",
   "legacy_paths_disallowed": [
-    "astro",
     "d1-primary",
     "static-primary"
   ],
@@ -34,7 +33,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -56,7 +55,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -78,7 +77,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -100,7 +99,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -122,7 +121,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -145,7 +144,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -167,7 +166,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -190,7 +189,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -213,7 +212,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -236,7 +235,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -264,7 +263,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -286,7 +285,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -308,7 +307,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ],
       "review_lane": "architecture_review",
       "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-multi-agent-systems-architect.md"
@@ -332,7 +331,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ],
       "review_lane": "data_quality_review",
       "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md"
@@ -356,7 +355,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ],
       "review_lane": "incident_response_review",
       "agent_profile_path": "/home/sam/agency-agents/security/security-incident-responder.md"
@@ -380,7 +379,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ],
       "review_lane": "workflow_qa_review",
       "agent_profile_path": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md"
@@ -404,7 +403,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ],
       "review_lane": "technical_writing_review",
       "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-technical-writer.md"
@@ -432,7 +431,7 @@
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     },
     {
@@ -448,14 +447,14 @@
       "acceptance_criteria": [
         "No required agency-agent review lane has decision block.",
         "Postgres import readiness is confirmed for sources, claims, evidence, package facts, IOCs, scripts, detections, and remediation gates.",
-        "Next.js/API/feed compatibility is confirmed; Astro and D1 are not treated as canonical publication targets.",
+        "Next.js/API/feed compatibility is confirmed; any D1 output is an explicitly versioned read replica subordinate to Postgres.",
         "If blocked, exact collection or fix steps are listed."
       ],
       "constraints": [
         "Do not invent package versions, timestamps, hashes, IOCs, victim counts, or attribution.",
         "Preserve unknown, not_observed, disputed, and inferred labels.",
         "Return structured JSON or YAML when the task contract defines a schema.",
-        "Use canonical Next.js/Postgres publication assumptions; do not rely on Astro or D1 as the primary publication path."
+        "Use canonical Next.js/Postgres publication assumptions; D1 is only an explicitly versioned read replica and cannot become fallback authority."
       ]
     }
   ],

@@ -2,7 +2,7 @@
 
 This repo packages the skills and plugin code used to run the Halting Problems threat-intel site workflow.
 
-The site itself lives in `~/haltingproblems.com`. The post/source material lives in `~/hp-posts-info`. This repo is the portable agent layer: it explains how the work is split across specialist skills, what each skill owns, and how the pieces move from raw source discovery to a live Postgres-backed Next.js threat page and JSON feed.
+The site itself lives in `/home/sam/halting-problems/repos/haltingproblems.com`. The post/source material lives in `/home/sam/halting-problems/repos/hp-posts-info`. This repo is the portable agent layer: it explains how the work is split across specialist skills, what each skill owns, and how the pieces move from raw source discovery to a live Postgres-backed Next.js threat page and JSON feed.
 
 ## Repository layout
 
@@ -106,7 +106,7 @@ Skills:
 - `post-schema-normalizer-and-migrator`
 - `site-worker`
 
-Each publishable incident should have a folder in `~/hp-posts-info/<slug>/` with:
+Each publishable incident should have a folder in `/home/sam/halting-problems/repos/hp-posts-info/<slug>/` with:
 
 ```text
 analysis.md or analysis.mdx
@@ -121,13 +121,13 @@ The important part: hunting scripts live with the post source material, not as l
 
 ### 7. Import into the website database
 
-Website repo: `~/haltingproblems.com`
+Website repo: `/home/sam/halting-problems/repos/haltingproblems.com`
 
 Typical validation/import path:
 
 ```bash
-cd ~/haltingproblems.com
-pnpm exec tsx scripts/import-posts-info-to-postgres.ts --posts-info-dir ../hp-posts-info --dry-run
+cd /home/sam/halting-problems/repos/haltingproblems.com
+pnpm run import:posts:postgres:dry-run
 ```
 
 After dry-run passes, import to production Postgres using the approved site workflow. Then verify that the live site/API reads the new rows.
@@ -222,7 +222,7 @@ python -m pytest skills/site-worker/tests
 python plugins/halting-problems-growth-engine/tests/validate_growth_engine_pack.py
 ```
 
-The website itself still needs its own checks from `~/haltingproblems.com`:
+The website itself still needs its own checks from `/home/sam/halting-problems/repos/haltingproblems.com`:
 
 ```bash
 pnpm check

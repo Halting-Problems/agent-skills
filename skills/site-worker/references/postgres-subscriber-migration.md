@@ -13,7 +13,7 @@ Use when moving Halting Problems newsletter/subscriber capture from legacy Cloud
    - `ip_hash text default ''`
    - `user_agent text default ''`
    - index: `(status, created_at desc)`
-2. Add the Drizzle schema export and a migration file under `migrations-postgres/`.
+2. Add the Drizzle schema export and a migration file under `database/migrations/postgres/`.
 3. Implement a Next.js App Router endpoint at `/api/subscribe` that:
    - accepts only JSON `POST`
    - validates and lowercases email
@@ -22,7 +22,7 @@ Use when moving Halting Problems newsletter/subscriber capture from legacy Cloud
    - upserts `status='subscribed'` on email conflict
    - returns `405` for unsupported methods and `400` for invalid email
 4. Add a client subscribe component to the Next.js homepage. Verify the homepage HTML contains the form marker after deploy.
-5. If local direct Postgres access is unavailable, extend the protected `/api/admin/migrate` route with a narrow subscriber migration action, deploy it, then POST the D1 rows to production through the same temporary `ADMIN_SECRET` pattern used for post imports.
+5. Migrate legacy D1 rows with a reviewed one-off tool that writes directly to Postgres. Do not add a production admin migration route.
 6. After migration, verify through production, not just local tests:
    - homepage returns `200` and contains `data-subscriber-form`
    - `/api/subscribe` rejects invalid email with `400`
